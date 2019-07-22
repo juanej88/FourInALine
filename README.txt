@@ -1,0 +1,1 @@
+This is my first project made with HTML, CSS and JavaScript. It is a game called Four in a Line where 2 people must play, the first player who has 4 tokens in a straight line (horizontal, vertical or diagonal) wins.

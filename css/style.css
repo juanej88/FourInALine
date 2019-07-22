@@ -1,0 +1,539 @@
+body {
+  background-color: rgba(205, 205, 205, 1);
+  position: relative;
+  z-index: -2;
+}
+header {
+  position: relative;
+  display: inline;
+  width: 100%;
+  margin: 0px auto;
+  padding: 10px;
+  text-align: center;
+  font-family: 'Righteous', cursive;
+}
+p {
+  font-size: 25px;
+  font-family: 'Righteous', cursive;
+  margin: 5px auto;
+}
+.player1 {
+  width: 140px;
+  display: inline;
+  float: left;
+  position: relative;
+  margin-left: 10px;
+}
+.redToken {
+  width: 65px;
+  height: 65px;
+  padding: 0px;
+  background: rgba(220, 73, 73, 1);
+  border-radius: 50%;
+  margin: 0px auto;
+}
+.player2 {
+  width: 140px;
+  display: inline;
+  float: right;
+  position: relative;
+  margin-right: 10px;
+}
+.yellowToken {
+  width: 65px;
+  height: 65px;
+  padding: 0px;
+  background: rgba(255, 237, 77, 1);
+  border-radius: 50%;
+  margin: 0px auto;
+}
+.tableContainer {
+  position: absolute;
+  top: 220px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+table {
+  position: relative;
+  cursor: pointer;
+  margin: 0 auto;
+  z-index: 0;
+}
+table.arrowPosition {
+  position: relative;
+  margin: auto;
+  border-color: rgba(70, 70, 210, 1);
+}
+table.board {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 540px;
+  background-color: rgba(70, 70, 210, 1);
+  border-spacing: 0px;
+  border: 7.5px solid rgba(70, 70, 210, 1);
+}
+.row6:hover + .redTokenBoard {
+  display: inline-block;
+}
+tr {
+  padding: 0px;
+  margin: 0px;
+}
+td {
+  position: relative;
+  width: 65px;
+  height: 65px;
+  padding: 0px;
+  background: rgba(205, 205, 205, 1);
+  border: 5px solid rgba(70, 70, 210, 1);
+  border-radius: 50%;
+  margin: 0px;
+}
+.blueBoxTop {
+  left: -5px;
+  top: -12px;
+  position: absolute;
+  z-index: 10;
+  width: 75px;
+  height: 82px;
+  margin: 0;
+  overflow: hidden;
+}
+.blueBoxTop:after {
+    content:'';
+    position:absolute;
+    top: 12px;
+    left: 5px;
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+    box-shadow: 0px 0px 0px 30px rgba(70, 70, 210, 1);
+}
+.blueBox {
+  left: -5px;
+  top: -5px;
+  position: absolute;
+  z-index: 10;
+  width: 75px;
+  height: 75px;
+  margin: 0;
+  overflow: hidden;
+}
+.blueBox:after {
+    content:'';
+    position:absolute;
+    top: 5px;
+    left: 5px;
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+    box-shadow: 0px 0px 0px 25px rgba(70, 70, 210, 1);
+}
+.invisibleRow {
+  position: relative;
+  display: flex;
+}
+.redTokenBoard1 {
+  position: relative;
+  top: auto;
+  left: -225px;
+  width: 65px;
+  height: 65px;
+  padding: 0px;
+  background: rgba(220, 73, 73, 1);
+  border: 5px solid rgba(205, 205, 205, 1);
+  border-radius: 50%;
+  margin: 0px auto;
+}
+.yellowTokenBoard1 {
+  position: relative;
+  top: auto;
+  left: -225px;
+  width: 65px;
+  height: 65px;
+  padding: 0px;
+  background: rgba(255, 237, 77, 1);
+  border: 5px solid rgba(205, 205, 205, 1);
+  border-radius: 50%;
+  margin: 0px auto;
+}
+.redTokenBoard2 {
+  position: relative;
+  top: auto;
+  left: -150px;
+  width: 65px;
+  height: 65px;
+  padding: 0px;
+  background: rgba(220, 73, 73, 1);
+  border: 5px solid rgba(205, 205, 205, 1);
+  border-radius: 50%;
+  margin: 0px auto;
+}
+.yellowTokenBoard2 {
+  position: relative;
+  top: auto;
+  left: -150px;
+  width: 65px;
+  height: 65px;
+  padding: 0px;
+  background: rgba(255, 237, 77, 1);
+  border: 5px solid rgba(205, 205, 205, 1);
+  border-radius: 50%;
+  margin: 0px auto;
+}
+.redTokenBoard3 {
+  position: relative;
+  top: auto;
+  left: -75px;
+  width: 65px;
+  height: 65px;
+  padding: 0px;
+  background: rgba(220, 73, 73, 1);
+  border: 5px solid rgba(205, 205, 205, 1);
+  border-radius: 50%;
+  margin: 0px auto;
+}
+.yellowTokenBoard3 {
+  position: relative;
+  top: auto;
+  left: -75px;
+  width: 65px;
+  height: 65px;
+  padding: 0px;
+  background: rgba(255, 237, 77, 1);
+  border: 5px solid rgba(205, 205, 205, 1);
+  border-radius: 50%;
+  margin: 0px auto;
+}
+.redTokenBoard4 {
+  position: relative;
+  top: auto;
+  left: 0px;
+  width: 65px;
+  height: 65px;
+  padding: 0px;
+  background: rgba(220, 73, 73, 1);
+  border: 5px solid rgba(205, 205, 205, 1);
+  border-radius: 50%;
+  margin: 0px auto;
+}
+.yellowTokenBoard4 {
+  position: relative;
+  top: auto;
+  left: 0px;
+  width: 65px;
+  height: 65px;
+  padding: 0px;
+  background: rgba(255, 237, 77, 1);
+  border: 5px solid rgba(205, 205, 205, 1);
+  border-radius: 50%;
+  margin: 0px auto;
+}
+.redTokenBoard5 {
+  position: relative;
+  top: auto;
+  left: 75px;
+  width: 65px;
+  height: 65px;
+  padding: 0px;
+  background: rgba(220, 73, 73, 1);
+  border: 5px solid rgba(205, 205, 205, 1);
+  border-radius: 50%;
+  margin: 0px auto;
+}
+.yellowTokenBoard5 {
+  position: relative;
+  top: auto;
+  left: 75px;
+  width: 65px;
+  height: 65px;
+  padding: 0px;
+  background: rgba(255, 237, 77, 1);
+  border: 5px solid rgba(205, 205, 205, 1);
+  border-radius: 50%;
+  margin: 0px auto;
+}
+.redTokenBoard6 {
+  position: relative;
+  top: auto;
+  left: 150px;
+  width: 65px;
+  height: 65px;
+  padding: 0px;
+  background: rgba(220, 73, 73, 1);
+  border: 5px solid rgba(205, 205, 205, 1);
+  border-radius: 50%;
+  margin: 0px auto;
+}
+.yellowTokenBoard6 {
+  position: relative;
+  top: auto;
+  left: 150px;
+  width: 65px;
+  height: 65px;
+  padding: 0px;
+  background: rgba(255, 237, 77, 1);
+  border: 5px solid rgba(205, 205, 205, 1);
+  border-radius: 50%;
+  margin: 0px auto;
+}
+.redTokenBoard7 {
+  position: relative;
+  top: auto;
+  left: 225px;
+  width: 65px;
+  height: 65px;
+  padding: 0px;
+  background: rgba(220, 73, 73, 1);
+  border: 5px solid rgba(205, 205, 205, 1);
+  border-radius: 50%;
+  margin: 0px auto;
+}
+.yellowTokenBoard7 {
+  position: relative;
+  top: auto;
+  left: 225px;
+  width: 65px;
+  height: 65px;
+  padding: 0px;
+  background: rgba(255, 237, 77, 1);
+  border: 5px solid rgba(205, 205, 205, 1);
+  border-radius: 50%;
+  margin: 0px auto;
+}
+.hiddenToken {
+  visibility: hidden;
+  position: fixed;
+}
+/*
+Transparent, Red and Yellow Tokens inside the board.
+*/
+.tt {
+  position: absolute;
+  z-index: 11;
+  width: 65px;
+  height: 65px;
+  top: 0px;
+  padding: 0px;
+  background: rgba(215, 215, 215, 0);
+  border-radius: 50%;
+  margin: 0px;
+}
+.rt {
+  width: 65px;
+  height: 65px;
+  padding: 0px;
+  background: rgba(220, 73, 73, 1);
+  border-radius: 50%;
+  margin: 0px;
+  z-index: 0;
+}
+.yt {
+  width: 65px;
+  height: 65px;
+  padding: 0px;
+  background: rgba(255, 237, 77, 1);
+  border-radius: 50%;
+  margin: 0px;
+}
+
+.lessOpacity {
+  animation-name: winnerEfect !important;
+  animation-duration: 5s !important;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: .75s;
+}
+
+@keyframes winnerEfect {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .25;
+  }
+  100% {
+    opacity:0.5;
+  }
+}
+
+/*
+Buttons' Section:
+startButton, player1Info, player2Info and resetGame
+*/
+
+#startButton {
+  width: 100%;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  animation-name: bigAndSmall;
+  animation-duration: 1.2s;
+  animation-delay: 2s;
+  animation-iteration-count: 2;
+  animation-timing-function: cubic-bezier(0.5, 0.05, 0.5, 0.95);
+}
+@keyframes bigAndSmall {
+  50% {
+    transform: scale(1.15);
+  }
+}
+#resetGame {
+  width: 100%;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+button {
+  width: 180px;
+  height: 50px;
+  border: 3px solid rgba(50, 50, 50, 1);
+  border-radius: 5px;
+  margin: 45px;
+  font-family: 'Righteous', cursive;
+  font-size: 20px;
+  cursor: pointer;
+  background: rgba(205, 205, 205, 1);
+}
+.fixedButton {
+  position: relative;
+  top: 360px;
+}
+button:hover {
+  background-color: rgba(70, 70, 210, 1);
+  color: rgba(205, 205, 205, 1);
+  border-color: rgba(70, 70, 210, 1);
+}
+button:active {
+  background-color: rgba(205, 205, 205, 1);
+  color: rgba(70, 70, 210, 1);
+  border-color: rgba(1, 1, 1, 1);
+}
+#player1Info {
+  width: 100%;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+#player2Info {
+  width: 100%;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+input {
+  height: 42px;
+  border: 3px solid rgba(50, 50, 50, 1);
+  border-radius: 5px;
+  font-family: 'Righteous', cursive;
+  font-size: 20px;
+  text-align: center;
+  margin: 45px auto;
+  border: 3px solid rgba(50, 50, 50, 1);
+  background-color: rgba(205, 205, 205, 1);
+}
+#smallRedToken {
+  display: inline-block;
+  position: relative;
+  top: 10px;
+  width: 35px;
+  height: 35px;
+  padding: 0px;
+  background: rgba(220, 73, 73, 1);
+  border-radius: 50%;
+  margin: 0 auto;
+}
+#namePlayer1 {
+  width: 250px;
+}
+#addButton1 {
+  height: 50px;
+  cursor: pointer;
+}
+#addButton1:hover {
+  background-color: rgba(70, 70, 210, 1);
+  color: rgba(205, 205, 205, 1);
+  border-color: rgba(70, 70, 210, 1);
+}
+#addButton1:active {
+  background-color: rgba(205, 205, 205, 1);
+  color: rgba(70, 70, 210, 1);
+  border-color: rgba(1, 1, 1, 1);
+}
+#smallYellowToken {
+  display: inline-block;
+  position: relative;
+  top: 10px;
+  width: 35px;
+  height: 35px;
+  padding: 0px;
+  background: rgba(255, 237, 77, 1);
+  border-radius: 50%;
+  margin: 0 auto;
+}
+#namePlayer2 {
+  width: 250px;
+}
+#addButton2 {
+  height: 50px;
+  cursor: pointer;
+}
+#addButton2:hover {
+  background-color: rgba(70, 70, 210, 1);
+  color: rgba(205, 205, 205, 1);
+  border-color: rgba(70, 70, 210, 1);
+}
+#addButton2:active {
+  background-color: rgba(205, 205, 205, 1);
+  color: rgba(70, 70, 210, 1);
+  border-color: rgba(1, 1, 1, 1);
+}
+#playAgain {
+  width: 100%;
+  position: fixed;
+  height: 100px;
+  top: 105px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr;
+  visibility: hidden;
+}
+#playerMessage {
+  margin: 0;
+  grid-column: 3 / 4;
+  justify-self: center;
+  align-self: center;
+}
+#play {
+  margin: 25px 0;
+  background-color: rgba(205, 205, 205, 1);
+  grid-column: 4 / 5;
+  justify-self: end;
+}
+#play:hover {
+  background-color: rgba(70, 70, 210, 1);
+  color: rgba(205, 205, 205, 1);
+  border-color: rgba(70, 70, 210, 1);
+}
+#play:active {
+  background-color: rgba(205, 205, 205, 1);
+  color: rgba(70, 70, 210, 1);
+  border-color: rgba(1, 1, 1, 1);
+}
+.playAgainPopUp {
+  visibility: visible !important;
+  opacity: 0;
+  animation-name: popUp;
+  animation-duration: 3s;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes popUp {
+  100% {
+    opacity: 1;
+  }
+}
