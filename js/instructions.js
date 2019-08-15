@@ -3,13 +3,13 @@
 
 $(function () {
 
-   var $startButton = $('#startButton');
-   var $player1Info = $('#player1Info');
-   var $smallRedToken = $('#smallRedToken')
-   var $player2Info = $('#player2Info');
-   var $smallYellowToken = $('#smallYellowToken')
-   var $resetGame = $('#resetGame');
-   var $playAgain = $('#playAgain');
+   const $startButton = $('#startButton');
+   const $player1Info = $('#player1Info');
+   const $smallRedToken = $('#smallRedToken')
+   const $player2Info = $('#player2Info');
+   const $smallYellowToken = $('#smallYellowToken')
+   const $resetGame = $('#resetGame');
+   const $playAgain = $('#playAgain');
 
    $startButton.show();
    $player1Info.hide();
@@ -77,9 +77,9 @@ $(function () {
       $('.newPlayer2').replaceWith('<h2>' + 'Player 2' + '</h2>');
       $('#scorePlayer1').html(0);
       $('#scorePlayer2').html(0);
-      var newPlayerName1 = $('div.redToken').next();
+      let newPlayerName1 = $('div.redToken').next();
       newPlayerName1.addClass('newPlayer1');
-      var newPlayerName2 = $('div.yellowToken').next();
+      let newPlayerName2 = $('div.yellowToken').next();
       newPlayerName2.addClass('newPlayer2');
       defaultHover();
    });
@@ -335,314 +335,129 @@ const tokenHovers = () => {
 };
 
 //This function inserts the Tokens into the Board after clicking the #addButton2
+
 let tokensInside = $('#addButton2').on('click', () => {
 
-   $(function (selectingColor){
+   /*
+   This function toggles the hiddenToken Class from 'rt' to 'yt' and vice versa.
+   */
 
-      /*
-      This function toggles the hiddenToken Class from 'rt' to 'yt' and vice versa.
-      */
+   let $hiddenToken = $('.hiddenToken');
 
-      var $hiddenToken = $('.hiddenToken');
-
-      $('div.token').on('mousedown', function() {
-         if ($hiddenToken.hasClass('rt') && $('.tokenChanger1').hasClass('yellowTokenBoard1')) {
-            $hiddenToken.toggleClass('yt rt');
-         } else if ($hiddenToken.hasClass('yt') && $('.tokenChanger1').hasClass('redTokenBoard1')) {
-            $hiddenToken.toggleClass('rt yt');
-         }
-      });
-
-      /*
-      This function checks if the Table Data has a Class 'tt' &&
-      the Class of the 'hiddenToken'. Therefore, it adds either an 'rt' or 'yt' Class
-      to the Table Data, and remove the 'tt' Class, so it won't be used again
-      in each game.
-      */
-
-      $('.firstColumn').on('mousedown', function() {
-         if ($('div.a1').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.a1').addClass('yt');
-            $('div.a1').removeClass('tt');
-         } else if ($('div.a1').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.a1').addClass('rt');
-            $('div.a1').removeClass('tt')
-         } else if ($('div.b1').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.b1').addClass('yt');
-            $('div.b1').removeClass('tt');
-         } else if ($('div.b1').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.b1').addClass('rt');
-            $('div.b1').removeClass('tt')
-         } else if ($('div.c1').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.c1').addClass('yt');
-            $('div.c1').removeClass('tt');
-         } else if ($('div.c1').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.c1').addClass('rt');
-            $('div.c1').removeClass('tt')
-         } else if ($('div.d1').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.d1').addClass('yt');
-            $('div.d1').removeClass('tt');
-         } else if ($('div.d1').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.d1').addClass('rt');
-            $('div.d1').removeClass('tt')
-         } else if ($('div.e1').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.e1').addClass('yt');
-            $('div.e1').removeClass('tt');
-         } else if ($('div.e1').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.e1').addClass('rt');
-            $('div.e1').removeClass('tt')
-         } else if ($('div.f1').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.f1').addClass('yt');
-            $('div.f1').removeClass('tt');
-         } else if ($('div.f1').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.f1').addClass('rt');
-            $('div.f1').removeClass('tt')
-         }
-      });
-
-      $('.secondColumn').on('mousedown', function() {
-         if ($('div.a2').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.a2').addClass('yt');
-            $('div.a2').removeClass('tt');
-         } else if ($('div.a2').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.a2').addClass('rt');
-            $('div.a2').removeClass('tt')
-         } else if ($('div.b2').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.b2').addClass('yt');
-            $('div.b2').removeClass('tt');
-         } else if ($('div.b2').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.b2').addClass('rt');
-            $('div.b2').removeClass('tt')
-         } else if ($('div.c2').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.c2').addClass('yt');
-            $('div.c2').removeClass('tt');
-         } else if ($('div.c2').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.c2').addClass('rt');
-            $('div.c2').removeClass('tt')
-         } else if ($('div.d2').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.d2').addClass('yt');
-            $('div.d2').removeClass('tt');
-         } else if ($('div.d2').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.d2').addClass('rt');
-            $('div.d2').removeClass('tt')
-         } else if ($('div.e2').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.e2').addClass('yt');
-            $('div.e2').removeClass('tt');
-         } else if ($('div.e2').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.e2').addClass('rt');
-            $('div.e2').removeClass('tt')
-         } else if ($('div.f2').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.f2').addClass('yt');
-            $('div.f2').removeClass('tt');
-         } else if ($('div.f2').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.f2').addClass('rt');
-            $('div.f2').removeClass('tt')
-         }
-      });
-
-      $('.thirdColumn').on('mousedown', function() {
-         if ($('div.a3').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.a3').addClass('yt');
-            $('div.a3').removeClass('tt');
-         } else if ($('div.a3').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.a3').addClass('rt');
-            $('div.a3').removeClass('tt')
-         } else if ($('div.b3').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.b3').addClass('yt');
-            $('div.b3').removeClass('tt');
-         } else if ($('div.b3').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.b3').addClass('rt');
-            $('div.b3').removeClass('tt')
-         } else if ($('div.c3').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.c3').addClass('yt');
-            $('div.c3').removeClass('tt');
-         } else if ($('div.c3').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.c3').addClass('rt');
-            $('div.c3').removeClass('tt')
-         } else if ($('div.d3').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.d3').addClass('yt');
-            $('div.d3').removeClass('tt');
-         } else if ($('div.d3').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.d3').addClass('rt');
-            $('div.d3').removeClass('tt')
-         } else if ($('div.e3').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.e3').addClass('yt');
-            $('div.e3').removeClass('tt');
-         } else if ($('div.e3').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.e3').addClass('rt');
-            $('div.e3').removeClass('tt')
-         } else if ($('div.f3').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.f3').addClass('yt');
-            $('div.f3').removeClass('tt');
-         } else if ($('div.f3').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.f3').addClass('rt');
-            $('div.f3').removeClass('tt')
-         }
-      });
-
-      $('.fourthColumn').on('mousedown', function() {
-         if ($('div.a4').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.a4').addClass('yt');
-            $('div.a4').removeClass('tt');
-         } else if ($('div.a4').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.a4').addClass('rt');
-            $('div.a4').removeClass('tt')
-         } else if ($('div.b4').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.b4').addClass('yt');
-            $('div.b4').removeClass('tt');
-         } else if ($('div.b4').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.b4').addClass('rt');
-            $('div.b4').removeClass('tt')
-         } else if ($('div.c4').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.c4').addClass('yt');
-            $('div.c4').removeClass('tt');
-         } else if ($('div.c4').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.c4').addClass('rt');
-            $('div.c4').removeClass('tt')
-         } else if ($('div.d4').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.d4').addClass('yt');
-            $('div.d4').removeClass('tt');
-         } else if ($('div.d4').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.d4').addClass('rt');
-            $('div.d4').removeClass('tt')
-         } else if ($('div.e4').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.e4').addClass('yt');
-            $('div.e4').removeClass('tt');
-         } else if ($('div.e4').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.e4').addClass('rt');
-            $('div.e4').removeClass('tt')
-         } else if ($('div.f4').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.f4').addClass('yt');
-            $('div.f4').removeClass('tt');
-         } else if ($('div.f4').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.f4').addClass('rt');
-            $('div.f4').removeClass('tt')
-         }
-      });
-
-      $('.fifthColumn').on('mousedown', function() {
-         if ($('div.a5').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.a5').addClass('yt');
-            $('div.a5').removeClass('tt');
-         } else if ($('div.a5').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.a5').addClass('rt');
-            $('div.a5').removeClass('tt')
-         } else if ($('div.b5').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.b5').addClass('yt');
-            $('div.b5').removeClass('tt');
-         } else if ($('div.b5').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.b5').addClass('rt');
-            $('div.b5').removeClass('tt')
-         } else if ($('div.c5').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.c5').addClass('yt');
-            $('div.c5').removeClass('tt');
-         } else if ($('div.c5').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.c5').addClass('rt');
-            $('div.c5').removeClass('tt')
-         } else if ($('div.d5').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.d5').addClass('yt');
-            $('div.d5').removeClass('tt');
-         } else if ($('div.d5').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.d5').addClass('rt');
-            $('div.d5').removeClass('tt')
-         } else if ($('div.e5').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.e5').addClass('yt');
-            $('div.e5').removeClass('tt');
-         } else if ($('div.e5').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.e5').addClass('rt');
-            $('div.e5').removeClass('tt')
-         } else if ($('div.f5').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.f5').addClass('yt');
-            $('div.f5').removeClass('tt');
-         } else if ($('div.f5').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.f5').addClass('rt');
-            $('div.f5').removeClass('tt')
-         }
-      });
-
-      $('.sixthColumn').on('mousedown', function() {
-         if ($('div.a6').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.a6').addClass('yt');
-            $('div.a6').removeClass('tt');
-         } else if ($('div.a6').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.a6').addClass('rt');
-            $('div.a6').removeClass('tt')
-         } else if ($('div.b6').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.b6').addClass('yt');
-            $('div.b6').removeClass('tt');
-         } else if ($('div.b6').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.b6').addClass('rt');
-            $('div.b6').removeClass('tt')
-         } else if ($('div.c6').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.c6').addClass('yt');
-            $('div.c6').removeClass('tt');
-         } else if ($('div.c6').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.c6').addClass('rt');
-            $('div.c6').removeClass('tt')
-         } else if ($('div.d6').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.d6').addClass('yt');
-            $('div.d6').removeClass('tt');
-         } else if ($('div.d6').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.d6').addClass('rt');
-            $('div.d6').removeClass('tt')
-         } else if ($('div.e6').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.e6').addClass('yt');
-            $('div.e6').removeClass('tt');
-         } else if ($('div.e6').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.e6').addClass('rt');
-            $('div.e6').removeClass('tt')
-         } else if ($('div.f6').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.f6').addClass('yt');
-            $('div.f6').removeClass('tt');
-         } else if ($('div.f6').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.f6').addClass('rt');
-            $('div.f6').removeClass('tt')
-         }
-      });
-
-      $('.seventhColumn').on('mousedown', function() {
-         if ($('div.a7').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.a7').addClass('yt');
-            $('div.a7').removeClass('tt');
-         } else if ($('div.a7').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.a7').addClass('rt');
-            $('div.a7').removeClass('tt')
-         } else if ($('div.b7').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.b7').addClass('yt');
-            $('div.b7').removeClass('tt');
-         } else if ($('div.b7').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.b7').addClass('rt');
-            $('div.b7').removeClass('tt')
-         } else if ($('div.c7').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.c7').addClass('yt');
-            $('div.c7').removeClass('tt');
-         } else if ($('div.c7').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.c7').addClass('rt');
-            $('div.c7').removeClass('tt')
-         } else if ($('div.d7').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.d7').addClass('yt');
-            $('div.d7').removeClass('tt');
-         } else if ($('div.d7').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.d7').addClass('rt');
-            $('div.d7').removeClass('tt')
-         } else if ($('div.e7').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.e7').addClass('yt');
-            $('div.e7').removeClass('tt');
-         } else if ($('div.e7').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.e7').addClass('rt');
-            $('div.e7').removeClass('tt')
-         } else if ($('div.f7').hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
-            $('div.f7').addClass('yt');
-            $('div.f7').removeClass('tt');
-         } else if ($('div.f7').hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
-            $('div.f7').addClass('rt');
-            $('div.f7').removeClass('tt')
-         }
-      });
-
+   $('div.token').on('mousedown', () => {
+      if ($hiddenToken.hasClass('rt') && $('.tokenChanger1').hasClass('yellowTokenBoard1')) {
+         $hiddenToken.toggleClass('yt rt');
+      } else if ($hiddenToken.hasClass('yt') && $('.tokenChanger1').hasClass('redTokenBoard1')) {
+         $hiddenToken.toggleClass('rt yt');
+      }
    });
 
+   /*
+   This function checks which Table Data has a Class 'tt' to add
+   the Class of the current 'hiddenToken', either 'rt' or 'yt'.
+   It also removes the 'tt' Class when giving a class 'rt' or 'yt',
+   so it won't be used again in each game.
+   */
+
+   $('.firstColumn').on('mousedown', () => {
+      for (let i = 1; i <= 6; i++) {
+         if ($(`div.firstRow${i}`).hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
+            $(`div.firstRow${i}`).addClass('yt');
+            $(`div.firstRow${i}`).removeClass('tt');
+            break;
+         } else if ($(`div.firstRow${i}`).hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
+            $(`div.firstRow${i}`).addClass('rt');
+            $(`div.firstRow${i}`).removeClass('tt');
+            break;
+         }
+      };
+   });
+
+   $('.secondColumn').on('mousedown', () => {
+      for (let i = 1; i <= 6; i++) {
+         if ($(`div.secondRow${i}`).hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
+            $(`div.secondRow${i}`).addClass('yt');
+            $(`div.secondRow${i}`).removeClass('tt');
+            break;
+         } else if ($(`div.secondRow${i}`).hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
+            $(`div.secondRow${i}`).addClass('rt');
+            $(`div.secondRow${i}`).removeClass('tt');
+            break;
+         }
+      };
+   });
+
+   $('.thirdColumn').on('mousedown', () => {
+      for (let i = 1; i <= 6; i++) {
+         if ($(`div.thirdRow${i}`).hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
+            $(`div.thirdRow${i}`).addClass('yt');
+            $(`div.thirdRow${i}`).removeClass('tt');
+            break;
+         } else if ($(`div.thirdRow${i}`).hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
+            $(`div.thirdRow${i}`).addClass('rt');
+            $(`div.thirdRow${i}`).removeClass('tt');
+            break;
+         }
+      };
+   });
+
+   $('.fourthColumn').on('mousedown', () => {
+      for (let i = 1; i <= 6; i++) {
+         if ($(`div.fourthRow${i}`).hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
+            $(`div.fourthRow${i}`).addClass('yt');
+            $(`div.fourthRow${i}`).removeClass('tt');
+            break;
+         } else if ($(`div.fourthRow${i}`).hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
+            $(`div.fourthRow${i}`).addClass('rt');
+            $(`div.fourthRow${i}`).removeClass('tt');
+            break;
+         }
+      };
+   });
+
+   $('.fifthColumn').on('mousedown', () => {
+      for (let i = 1; i <= 6; i++) {
+         if ($(`div.fifthRow${i}`).hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
+            $(`div.fifthRow${i}`).addClass('yt');
+            $(`div.fifthRow${i}`).removeClass('tt');
+            break;
+         } else if ($(`div.fifthRow${i}`).hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
+            $(`div.fifthRow${i}`).addClass('rt');
+            $(`div.fifthRow${i}`).removeClass('tt');
+            break;
+         }
+      };
+   });
+
+   $('.sixthColumn').on('mousedown', () => {
+      for (let i = 1; i <= 6; i++) {
+         if ($(`div.sixthRow${i}`).hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
+            $(`div.sixthRow${i}`).addClass('yt');
+            $(`div.sixthRow${i}`).removeClass('tt');
+            break;
+         } else if ($(`div.sixthRow${i}`).hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
+            $(`div.sixthRow${i}`).addClass('rt');
+            $(`div.sixthRow${i}`).removeClass('tt');
+            break;
+         }
+      };
+   });
+
+   $('.seventhColumn').on('mousedown', () => {
+      for (let i = 1; i <= 6; i++) {
+         if ($(`div.seventhRow${i}`).hasClass('tt') && $('.hiddenToken').hasClass('rt')) {
+            $(`div.seventhRow${i}`).addClass('yt');
+            $(`div.seventhRow${i}`).removeClass('tt');
+            break;
+         } else if ($(`div.seventhRow${i}`).hasClass('tt') && $('.hiddenToken').hasClass('yt')) {
+            $(`div.seventhRow${i}`).addClass('rt');
+            $(`div.seventhRow${i}`).removeClass('tt');
+            break;
+         }
+      };
+   });
 });
+
 // Chosing the winner
 
 const winnerLines = [
