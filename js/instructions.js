@@ -1,7 +1,7 @@
 
 //Players' names and Reset Button
 
-$(function () {
+$(() => {
 
    const $startButton = $('#startButton');
    const $player1Info = $('#player1Info');
@@ -19,7 +19,7 @@ $(function () {
    $resetGame.hide();
    $playAgain.show();
 
-   $('#start').on('click', function(){
+   $('#start').on('click', () => {
       $startButton.hide();
       $player1Info.show();
       $smallRedToken.show();
@@ -29,7 +29,7 @@ $(function () {
       $('#namePlayer1').focus();
    });
 
-   $('#addButton1').on('click', function(e){
+   $('#addButton1').on('click', (e) => {
       e.preventDefault();
       var $textInput = $('#namePlayer1');
       var newText = $textInput.val();
@@ -46,7 +46,7 @@ $(function () {
       $('#namePlayer2').focus();
    });
 
-   $('#addButton2').on('click', function(e){
+   $('#addButton2').on('click', (e) => {
       e.preventDefault();
       var $textInput = $('#namePlayer2');
       var newText = $textInput.val();
@@ -63,26 +63,26 @@ $(function () {
       tokenHovers();
    });
 
-   $('#reset').on('click', function(){
-      $startButton.hide();
-      $player1Info.show();
-      $smallRedToken.show();
-      $player2Info.hide();
-      $smallYellowToken.hide();
-      $resetGame.hide();
-      $('.token').addClass('tt');
-      $('.token').removeClass('rt').removeClass('lessOpacity');
-      $('.token').removeClass('yt').removeClass('lessOpacity');
-      $('.newPlayer1').replaceWith('<h2>' + 'Player 1' + '</h2>');
-      $('.newPlayer2').replaceWith('<h2>' + 'Player 2' + '</h2>');
-      $('#scorePlayer1').html(0);
-      $('#scorePlayer2').html(0);
-      let newPlayerName1 = $('div.redToken').next();
-      newPlayerName1.addClass('newPlayer1');
-      let newPlayerName2 = $('div.yellowToken').next();
-      newPlayerName2.addClass('newPlayer2');
-      defaultHover();
-   });
+   // $('#reset').on('click', () => {
+   //    $startButton.hide();
+   //    $player1Info.show();
+   //    $smallRedToken.show();
+   //    $player2Info.hide();
+   //    $smallYellowToken.hide();
+   //    $resetGame.hide();
+   //    $('.token').addClass('tt');
+   //    $('.token').removeClass('rt').removeClass('lessOpacity');
+   //    $('.token').removeClass('yt').removeClass('lessOpacity');
+   //    $('.newPlayer1').replaceWith('<h2>' + 'Player 1' + '</h2>');
+   //    $('.newPlayer2').replaceWith('<h2>' + 'Player 2' + '</h2>');
+   //    $('#scorePlayer1').html(0);
+   //    $('#scorePlayer2').html(0);
+   //    let newPlayerName1 = $('div.redToken').next();
+   //    newPlayerName1.addClass('newPlayer1');
+   //    let newPlayerName2 = $('div.yellowToken').next();
+   //    newPlayerName2.addClass('newPlayer2');
+   //    defaultHover();
+   // });
 
 });
 
